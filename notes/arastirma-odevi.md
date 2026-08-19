@@ -1,5 +1,5 @@
 Python Paket Yönetimi Çıkmazı: uv vs poetry vs pip-tools vs conda
-Python ekosisteminde geliştirme yaparken en sık karşılaşılan sorunlardan biri "Benim bilgisayarımda çalışıyordu!" cümlesidir. Projeler büyüdükçe kütüphanelerin alt bağımlılıklarını yönetmek (dependency resolution) ve ortamları izole etmek, standart pip ve requirements.txt ikilisinin boyunu aşar. Bu noktada farklı mühendislik felsefelerine sahip dört ana araç öne çıkmaktadır: Conda, Pip-tools, Poetry ve Uv. Peki hangi durumda hangisini seçmeliyiz?
+Python ekosisteminde geliştirme yaparken en sık karşılaşılan sorunlardan biri "Benim bilgisayarımda çalışıyordu!" cümlesidir. Projeler büyüdükçe kütüphanelerin alt bağımlılıklarını yönetmek (dependency resolution) ve ortamları izole etmek, standart pip ve requirements.txt ikilisinin boyunu aşar. Bu noktada farklı mühendislik felsefesine sahip dört ana araç öne çıkmaktadır: Conda, Pip-tools, Poetry ve Uv. Peki hangi durumda hangisini seçmeliyiz?
 
 1. Conda: Veri Biliminin Ağır İşçisi
 Conda, sadece Python paketlerini değil, C/C++ kütüphanelerini (örneğin CUDA sürücüleri) ve işletim sistemi düzeyindeki bağımlılıkları da kurabilen kapsamlı bir ortam yöneticisidir.
