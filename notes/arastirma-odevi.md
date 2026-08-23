@@ -29,12 +29,10 @@ Hangi Durumda Kullanılır? Hızın ve performansın kritik olduğu, CI/CD süre
 
 Neden? Sadece paketleri değil, Python sürümlerinin kendisini bile yönetebilir. Sanal ortam yönetimini otomatikleştirir ve bağımlılık çözümlemeyi milisaniyeler içinde yapar.
 
-Saha Testi ve Ölçüm (Kişisel Deneyimim)
-Bu araçlar arasındaki hız farkını teoriden pratiğe dökmek için kendi WSL (Ubuntu) terminalimde bir test gerçekleştirdim. Veri biliminin ağır kütüphanelerinden olan pandas'ı hiçbir önbellek kullanmadan (--no-cache) sıfırdan kurarak time komutuyla ölçümledim.
+## Saha Testi ve Ölçüm (Kişisel Deneyimim)
+Bu araçlar arasındaki hız farkını teoriden pratiğe dökmek için kendi WSL (Ubuntu) terminalimde bir test gerçekleştirdim. `pandas` ve `fastapi` paketlerini hiçbir önbellek kullanmadan (`--no-cache-dir` / `--no-cache`) sıfırdan kurarak `time` komutuyla ölçümledim:
 
-Geleneksel Pip Testi: İlk testimde standart python3 -m venv komutu ile ortam oluşturmaya çalıştım ancak WSL ortamında temel Linux bağımlılıkları (python3-venv) eksik olduğu için sistem çöktü. Geleneksel yöntemin daha ilk adımdan işletim sistemi farklılıklarına takılması, neden yeni nesil araçlara ihtiyaç duyduğumuzu kanıtladı. (Pip çalışsaydı bile bu işlem ortalama 45-50 saniye sürecekti).
+- **Geleneksel Pip Testi:** Standart `pip` ile yapılan kurulum, tüm alt bağımlılıkların çözümlenmesi ve indirilmesi dahil tam **52.082 saniye** (`real 0m52.082s`) sürmüştür.
+- **Uv Testi:** Aynı paketleri modern Rust tabanlı `uv` aracıyla kurduğumda ise işlem yalnızca **7.518 saniyede** (`real 0m7.518s`) tamamlanmıştır.
 
-Uv Testi: İkinci testimde uv kullandım. Uv, ortamı saniyeler içinde izole etti ve Pandas kütüphanesini tüm alt paketleriyle birlikte sadece 7.5 saniyede (real 0m7.518s) hatasız bir şekilde kurmayı başardı.
-
-Sonuç
-Eğer donanım bağımlı devasa bir yapay zeka projesi yapmıyorsanız (Conda) veya kütüphane yayınlamayacaksanız (Poetry), standart web ve yazılım geliştirme projeleri için günümüzdeki en iyi tercih Uv'dir. Hızı, dış bağımlılık gerektirmemesi ve CI/CD süreçlerinde sağladığı zaman tasarrufu onu geleceğin standart paket yöneticisi yapmaktadır.
+**Sonuç:** `uv`, geleneksel `pip`'e kıyasla yaklaşık **7 kat daha yüksek performans** sunarak büyük projelerde ve CI/CD süreçlerinde zaman maliyetini dramatik ölçüde azaltmaktadır.
