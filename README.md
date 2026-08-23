@@ -1,4 +1,4 @@
-# dev-setup - Ödev 1.1
+# dev-setup (Ödev 1.1)
 
 [![CI](https://github.com/sudenazkocoglu/dev-setup/actions/workflows/ci.yml/badge.svg)](https://github.com/sudenazkocoglu/dev-setup/actions/workflows/ci.yml)
 
