@@ -8,7 +8,7 @@ test:
 	uv run pytest -v --cov=src --cov-report=term-missing
 
 run:
-	uv run python -m src.main
+	uv run python -m src.dev_setup.main
 
 docker:
 	docker build -t $(shell basename $(CURDIR)) .
