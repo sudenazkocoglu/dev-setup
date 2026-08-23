@@ -3,4 +3,4 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 WORKDIR /app
 COPY . .
 RUN uv sync
-CMD ["uv", "run", "python", "-m", "src.main"] 
+CMD ["uv", "run", "python", "-m", "src.main"]

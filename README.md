@@ -4,4 +4,4 @@
 ## Nasıl çalıştırılır
 ```bash
 make install
-make test 
+make test

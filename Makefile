@@ -12,4 +12,3 @@ run:
 
 docker:
 	docker build -t $(shell basename $(CURDIR)) .
-	
