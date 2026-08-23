@@ -1,7 +1,7 @@
 **Soru 1: `pip install` ile `uv add` arasında bağımlılık çözümlemesi (dependency resolution) açısından fark nedir?**
 
 **Cevap:**
-`pip` geleneksel bir yöntemdir ve projeler büyüdükçe bağımlılıkları çözerken oldukça yavaş kalır, hatta sistem eksikliklerinde takılıp çöker. `uv` ise modern, Rust tabanlı ve çok hızlıdır; bağımlılık ağını milisaniyeler içerisinde çözer. Ayrıca `uv`, `pip` komutlarını tamamen kapsamakla birlikte, `venv` (sanat ortam) izolasyonunu otomatik yöneterek diğer projelerinizin zarar görmesini engeller ve sistemi korur.
+`pip install geleneksel bir yöntemdir ve bağımlılıkları çözerken standart pip mekanizmasını kullanır; ancak gelişmiş bir kilit (lock) dosyası yönetimi sunmaz. uv add ise Rust tabanlı hızlı bir çözümleme algoritması kullanır ve paketleri kurarken aynı zamanda pyproject.toml veya uv.lock dosyalarına otomatik olarak işleyerek sürümü kilitler.
 
 **Soru 2: `__pycache__` neden `.gitignore` dosyasında olmalı?**
 
