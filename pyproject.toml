@@ -1,13 +1,13 @@
 [project]
 name = "dev-setup"
 version = "0.1.0"
-description = "Add your description here"
+description = "Standart Python proje şablonu ve DevOps geliştirme ortamı"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
 
 [project.scripts]
-dev-setup = "dev_setup:main"
+dev-setup = "dev_setup.main:main"
 
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
@@ -21,5 +21,16 @@ dev = [
     "pytest-cov>=7.1.0",
     "ruff>=0.16.3",
 ]
+
 [tool.pytest.ini_options]
 pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
