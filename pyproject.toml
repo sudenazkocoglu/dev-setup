@@ -29,7 +29,7 @@ pythonpath = ["src"]
 
 line-length = 88
 
->>>>>>> 0af5c6b (fix: uv.lock ve python 3.12 surum uyumu duzenlendi)
+
 target-version = "py312"
 
 [tool.mypy]
@@ -38,5 +38,3 @@ python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true
 ignore_missing_imports = true
-
->>>>>>> 0af5c6b (fix: uv.lock ve python 3.12 surum uyumu duzenlendi)
